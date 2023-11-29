@@ -27,7 +27,7 @@ public class CatTest {
     }
 
     @Test
-    public void getFood_callsPredatorEatMeat() throws Exception{
+    public void getFoodCallsPredatorEatMeat() throws Exception{
         cat.getFood();
         verify(mockFeline, times(1)).eatMeat();
     }

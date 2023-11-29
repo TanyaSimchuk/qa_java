@@ -23,13 +23,16 @@ public class LionParamsTest {
                 {"Самка", false},
         };
     }
-
     @Test
     public void doesLionHaveMane() throws Exception {
-        Lion lion1 = new Lion("Самец");
-        Lion lion2 = new Lion("Самка");
-        assertTrue(lion1.doesHaveMane());
-        assertFalse(lion2.doesHaveMane());
-        assertThrows("Используйте допустимые значения пола животного - самец или самка", Exception.class, () -> new Lion("InvalidSex"));
+        Feline feline = new Feline();
+        Lion lion = new Lion(feline, sex);
+        assertEquals(hasMane, lion.doesHaveMane());
     }
+    @Test(expected = Exception.class)
+    public void doesHaveManeException() throws Exception {
+        Feline feline = new Feline();
+        Lion lion = new Lion(feline, "Invalid sex");
+    }
+
 }

@@ -1,8 +1,10 @@
 package com.example;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -11,8 +13,13 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
-    @InjectMocks
+    @Mock
     private Feline feline;
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+        feline = new Feline();
+    }
     @Test
     public void testEatMeat() throws Exception {
         // Act
