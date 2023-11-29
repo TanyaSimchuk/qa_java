@@ -11,15 +11,10 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
-    @Mock
-    private Feline feline;
-    @Before
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-        feline = new Feline();
-    }
+
+    Feline feline = new Feline();
+
     @Test
     public void testEatMeat() throws Exception {
         // Act

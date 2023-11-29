@@ -29,10 +29,5 @@ public class LionParamsTest {
         Lion lion = new Lion(feline, sex);
         assertEquals(hasMane, lion.doesHaveMane());
     }
-    @Test(expected = Exception.class)
-    public void doesHaveManeException() throws Exception {
-        Feline feline = new Feline();
-        Lion lion = new Lion(feline, "Invalid sex");
-    }
 
 }

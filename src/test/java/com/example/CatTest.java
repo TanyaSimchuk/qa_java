@@ -17,7 +17,6 @@ public class CatTest {
     private Cat cat;
     @Before
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         cat = new Cat(mockFeline);
     }
     @Test

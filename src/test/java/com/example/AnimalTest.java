@@ -24,9 +24,10 @@ public class AnimalTest {
         };
     }
 
+    Animal animal = new Animal();
+
     @Test
     public void testGetFood() throws Exception {
-        Animal animal = new Animal();
         List<String> expectedFood = Arrays.asList(foodType.split(", "));
         assertEquals(expectedFood, animal.getFood(animalKind));
     }
@@ -34,13 +35,11 @@ public class AnimalTest {
 
     @Test(expected=Exception.class)
     public void testGetFoodException() throws Exception {
-        Animal animal = new Animal();
         List<String> result = animal.getFood("Invalid Animal");
     }
 
     @Test
     public void testGetFamily() {
-        Animal animal = new Animal();
         String actualFamily = animal.getFamily();
         assertEquals("Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи", actualFamily);
     }
